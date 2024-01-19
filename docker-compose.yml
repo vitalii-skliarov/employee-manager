@@ -1,0 +1,26 @@
+version: '3.3'
+
+services:
+  mysql-db:
+    container_name: mysql-db
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'mysql-db'
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: 'user'
+      MYSQL_ROOT_PASSWORD: 'root'
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+    volumes:
+      - mysql-db-volume:/var/lib/mysql-db-volume
+    networks:
+      - mysql-db-network
+volumes:
+  mysql-db-volume:
+
+networks:
+  mysql-db-network:
+    driver: bridge
