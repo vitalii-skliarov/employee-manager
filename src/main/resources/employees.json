@@ -1,0 +1,44 @@
+[
+  {
+    "email": "karina.clark@bootdey.com",
+    "imageUrl": "https://bootdey.com/img/Content/avatar/avatar1.png",
+    "jobTitle": "UX Designer",
+    "name": "Karina Clark",
+    "phone": "000 123-456"
+  },
+  {
+    "email": "dianna.smiley@getarrays.com",
+    "imageUrl": "https://bootdey.com/img/Content/avatar/avatar2.png",
+    "jobTitle": "Full Stack Developer",
+    "name": "Dianna Smiley",
+    "phone": "000 123-456"
+  },
+  {
+    "email": "roland.thomas@getarrays.com",
+    "imageUrl": "https://bootdey.com/img/Content/avatar/avatar3.png",
+    "jobTitle": "Front-End Engineer",
+    "name": "Roland Thomas",
+    "phone": "000 123-456"
+  },
+  {
+    "email": "anne.brewer@getarrays.com",
+    "imageUrl": "https://bootdey.com/img/Content/avatar/avatar4.png",
+    "jobTitle": "Content Marketing Managers",
+    "name": "Anne Brewer",
+    "phone": "000 123-456"
+  },
+  {
+    "email": "joshua.george@getarrays.com",
+    "imageUrl": "https://bootdey.com/img/Content/avatar/avatar5.png",
+    "jobTitle": "UX Designer",
+    "name": "Joshua George",
+    "phone": "000 123-456"
+  },
+  {
+    "email": "diane.baughman@getarrays.com",
+    "imageUrl": "https://bootdey.com/img/Content/avatar/avatar6.png",
+    "jobTitle": "Senior UX Designer",
+    "name": "Diane Baughman",
+    "phone": "000 123-456"
+  }
+]
