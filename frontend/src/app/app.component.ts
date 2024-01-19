@@ -3,11 +3,14 @@ import {RouterOutlet} from '@angular/router';
 import {EmployeeOutDto} from "./employee";
 import {EmployeeService} from "./employee.service";
 import {HttpErrorResponse} from "@angular/common/http";
+import {AppModule} from "./app.module";
 
 @Component({
   selector: 'app-root',
+  standalone: true,
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
+  imports: [AppModule]
 })
 export class AppComponent implements OnInit {
   public employees: EmployeeOutDto[];
