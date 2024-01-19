@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>dev.vitalii</groupId>
-    <artifactId>Backend</artifactId>
+    <artifactId>Spring Boot Full Stack with Angular</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>Backend</name>
     <description>Backend</description>
