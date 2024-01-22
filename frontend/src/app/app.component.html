@@ -30,8 +30,14 @@
           </div>
         </div>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item"><i class="fa fa-envelope float-right"></i>Email: <a href="#">{{employee?.email}}</a></li>
-          <li class="list-group-item"><i class="fa fa-phone float-right"></i>Phone: {{employee?.phoneNumber}}</li>
+          <li class="list-group-item">
+            <i class="fa fa-envelope float-right"></i>
+            <span aria-hidden="true">&#9993;</span>: {{employee?.email}}
+          </li>
+          <li class="list-group-item">
+            <i class="fa fa-phone float-right"></i>
+            <span aria-hidden="true">&#9742;</span>: {{employee?.phoneNumber}}
+          </li>
         </ul>
         <div class="card-body">
           <div class="float-right btn-group btn-group-sm">
