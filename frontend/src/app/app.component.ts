@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {EmployeeService} from "./employee.service";
 import {HttpErrorResponse} from "@angular/common/http";
 import {AppModule} from "./app.module";
-import {Employee} from "./employee";
+import {EmployeeOutDto, EmployeeAddDto, EmployeeUpdateDto} from "./employee";
 import {FormsModule, NgForm} from "@angular/forms";
 
 @Component({
@@ -13,9 +13,10 @@ import {FormsModule, NgForm} from "@angular/forms";
   imports: [AppModule, FormsModule]
 })
 export class AppComponent implements OnInit {
-  public employees: Employee[] = [];
-  public editEmployee: Employee | null = null;
-  public deleteEmployee: Employee | null = null;
+  public employees: EmployeeOutDto[] = [];
+  public editEmployeeId: number | null = null;
+  public editEmployee: EmployeeUpdateDto | null = null;
+  public deleteEmployee: EmployeeOutDto | null = null;
 
 
   public constructor(private employeeService: EmployeeService) {
@@ -27,7 +28,7 @@ export class AppComponent implements OnInit {
 
   public getEmployees(): void {
     this.employeeService.getEmployees().subscribe(
-      (response: Employee[]) => {
+      (response: EmployeeOutDto[]) => {
         this.employees = response;
         console.log(response);
       },
@@ -41,20 +42,20 @@ export class AppComponent implements OnInit {
     document.getElementById('add-employee-form')?.click();
 
     this.employeeService.addEmployee(addForm.value).subscribe(
-      (response: Employee) => {
+      (response: EmployeeAddDto) => {
         console.log(response);
         this.getEmployees();
+        addForm.reset();
       },
       (error: HttpErrorResponse) => {
         alert(error.message);
       }
     )
-    addForm.reset()
   }
 
-  public onUpdateEmployee(employee: Employee): void {
-    this.employeeService.updateEmployee(employee.id, employee).subscribe(
-      (response: Employee) => {
+  public onUpdateEmployee(employeeId: number | null, employee: EmployeeUpdateDto): void {
+    this.employeeService.updateEmployee(employeeId, employee).subscribe(
+      (response: EmployeeOutDto) => {
         console.log(response);
         this.getEmployees();
       },
@@ -79,7 +80,7 @@ export class AppComponent implements OnInit {
   public searchEmployees(key: string): void {
     console.log(key);
 
-    const results: Employee[] = [];
+    const results: EmployeeOutDto[] = [];
 
     for (const employee of this.employees) {
       let searchString = key.toLowerCase();
@@ -99,25 +100,47 @@ export class AppComponent implements OnInit {
     }
   }
 
-  public onOpenModal(employee: Employee | null, mode: string): void {
-    // this.editEmployee = null;
+  public onOpenModalAdd(): void {
+    this.editEmployee = null;
+
     const container = document.getElementById('main-container');
     const button = document.createElement('button');
     button.type = 'button';
     button.style.display = 'none';
     button.setAttribute('data-toggle', 'modal');
 
-    if (mode == 'add') {
-      button.setAttribute('data-target', '#addEmployeeModal');
-    }
-    if (mode == 'edit') {
-      this.editEmployee = employee;
-      button.setAttribute('data-target', '#updateEmployeeModal');
-    }
-    if (mode == 'delete') {
-      this.deleteEmployee = employee;
-      button.setAttribute('data-target', '#deleteEmployeeModal');
-    }
+    button.setAttribute('data-target', '#addEmployeeModal');
+
+    container?.appendChild(button);
+    button.click();
+  }
+
+  public onOpenModalEdit(employeeId: number | null, employee: EmployeeOutDto | null): void {
+    this.editEmployee = null;
+
+    const container = document.getElementById('main-container');
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.style.display = 'none';
+    button.setAttribute('data-toggle', 'modal');
+
+    this.editEmployeeId = employeeId;
+    this.editEmployee = employee;
+    button.setAttribute('data-target', '#updateEmployeeModal');
+
+    container?.appendChild(button);
+    button.click();
+  }
+
+  public onOpenModalDelete(employee: EmployeeOutDto | null): void {
+    const container = document.getElementById('main-container');
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.style.display = 'none';
+    button.setAttribute('data-toggle', 'modal');
+
+    this.deleteEmployee = employee;
+    button.setAttribute('data-target', '#deleteEmployeeModal');
 
     container?.appendChild(button);
     button.click();
