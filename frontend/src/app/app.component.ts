@@ -1,8 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {EmployeeService} from "./employee.service";
-import {HttpErrorResponse} from "@angular/common/http";
 import {AppModule} from "./app.module";
-import {EmployeeOutDto, EmployeeAddDto, EmployeeUpdateDto} from "./employee";
+import {EmployeeOutDto, EmployeeUpdateDto} from "./employee";
 import {FormsModule, NgForm} from "@angular/forms";
 
 @Component({
@@ -27,54 +26,54 @@ export class AppComponent implements OnInit {
   }
 
   public getEmployees(): void {
-    this.employeeService.getEmployees().subscribe(
-      (response: EmployeeOutDto[]) => {
+    this.employeeService.getEmployees().subscribe({
+      next: (response) => {
         this.employees = response;
         console.log(response);
       },
-      (error: HttpErrorResponse) => {
-        alert(error.message)
+      error: (e) => {
+        alert(e.message)
       }
-    );
+    });
   }
 
   public onAddEmployee(addForm: NgForm): void {
     document.getElementById('add-employee-form')?.click();
 
-    this.employeeService.addEmployee(addForm.value).subscribe(
-      (response: EmployeeAddDto) => {
+    this.employeeService.addEmployee(addForm.value).subscribe({
+      next: (response) => {
         console.log(response);
         this.getEmployees();
         addForm.reset();
       },
-      (error: HttpErrorResponse) => {
-        alert(error.message);
+      error: (e) => {
+        alert(e.message);
       }
-    )
+    });
   }
 
   public onUpdateEmployee(employeeId: number | null, employee: EmployeeUpdateDto): void {
-    this.employeeService.updateEmployee(employeeId, employee).subscribe(
-      (response: EmployeeOutDto) => {
+    this.employeeService.updateEmployee(employeeId, employee).subscribe({
+      next: (response) => {
         console.log(response);
         this.getEmployees();
       },
-      (error: HttpErrorResponse) => {
-        alert(error.message);
+      error: (e) => {
+        alert(e.message);
       }
-    )
+    })
   }
 
   public onDeleteEmployee(employeeId?: number): void {
-    this.employeeService.deleteEmployee(employeeId).subscribe(
-      (response: void) => {
+    this.employeeService.deleteEmployee(employeeId).subscribe({
+      next: (response) => {
         console.log(response);
         this.getEmployees();
       },
-      (error: HttpErrorResponse) => {
+      error: (error) => {
         alert(error.message);
       }
-    );
+    });
   }
 
   public searchEmployees(key: string): void {
