@@ -1,10 +1,10 @@
-package dev.vitalii.springbootfullstackwithangular;
+package dev.vitalii.employeemanager;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class BackendApplicationTests {
+class EmployeeManagerTests {
 
     @Test
     void contextLoads() {

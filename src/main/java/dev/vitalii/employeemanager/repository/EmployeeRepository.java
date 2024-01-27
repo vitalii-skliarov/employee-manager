@@ -1,7 +1,7 @@
-package dev.vitalii.springbootfullstackwithangular.repository;
+package dev.vitalii.employeemanager.repository;
 
-import dev.vitalii.springbootfullstackwithangular.exception.EmployeeNotFound;
-import dev.vitalii.springbootfullstackwithangular.model.Employee;
+import dev.vitalii.employeemanager.exception.EmployeeNotFound;
+import dev.vitalii.employeemanager.model.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

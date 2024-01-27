@@ -1,4 +1,4 @@
-package dev.vitalii.springbootfullstackwithangular.model;
+package dev.vitalii.employeemanager.model;
 
 import jakarta.persistence.*;
 import lombok.*;

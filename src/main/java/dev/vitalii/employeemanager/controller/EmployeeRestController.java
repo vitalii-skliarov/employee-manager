@@ -1,9 +1,9 @@
-package dev.vitalii.springbootfullstackwithangular.controller;
+package dev.vitalii.employeemanager.controller;
 
-import dev.vitalii.springbootfullstackwithangular.dto.EmployeeAddDto;
-import dev.vitalii.springbootfullstackwithangular.dto.EmployeeOutDto;
-import dev.vitalii.springbootfullstackwithangular.dto.EmployeeUpdateDto;
-import dev.vitalii.springbootfullstackwithangular.service.EmployeeService;
+import dev.vitalii.employeemanager.dto.EmployeeAddDto;
+import dev.vitalii.employeemanager.dto.EmployeeOutDto;
+import dev.vitalii.employeemanager.dto.EmployeeUpdateDto;
+import dev.vitalii.employeemanager.service.EmployeeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

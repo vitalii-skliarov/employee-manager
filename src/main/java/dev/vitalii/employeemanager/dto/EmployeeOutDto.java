@@ -1,12 +1,13 @@
-package dev.vitalii.springbootfullstackwithangular.dto;
+package dev.vitalii.employeemanager.dto;
 
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class EmployeeAddDto {
+public class EmployeeOutDto {
 
+    private Long id;
     private String name;
     private String email;
     private String jobTitle;

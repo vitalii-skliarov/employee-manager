@@ -1,4 +1,4 @@
-package dev.vitalii.springbootfullstackwithangular.exception;
+package dev.vitalii.employeemanager.exception;
 
 public class EmployeeNotFound extends RuntimeException {
 

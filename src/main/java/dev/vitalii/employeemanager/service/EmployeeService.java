@@ -1,11 +1,11 @@
-package dev.vitalii.springbootfullstackwithangular.service;
+package dev.vitalii.employeemanager.service;
 
-import dev.vitalii.springbootfullstackwithangular.dto.EmployeeAddDto;
-import dev.vitalii.springbootfullstackwithangular.dto.EmployeeOutDto;
-import dev.vitalii.springbootfullstackwithangular.dto.EmployeeUpdateDto;
-import dev.vitalii.springbootfullstackwithangular.mapper.EmployeeMapper;
-import dev.vitalii.springbootfullstackwithangular.model.Employee;
-import dev.vitalii.springbootfullstackwithangular.repository.EmployeeRepository;
+import dev.vitalii.employeemanager.dto.EmployeeAddDto;
+import dev.vitalii.employeemanager.dto.EmployeeOutDto;
+import dev.vitalii.employeemanager.dto.EmployeeUpdateDto;
+import dev.vitalii.employeemanager.mapper.EmployeeMapper;
+import dev.vitalii.employeemanager.model.Employee;
+import dev.vitalii.employeemanager.repository.EmployeeRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

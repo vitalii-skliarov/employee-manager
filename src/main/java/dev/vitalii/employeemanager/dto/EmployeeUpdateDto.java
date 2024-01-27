@@ -1,4 +1,4 @@
-package dev.vitalii.springbootfullstackwithangular.dto;
+package dev.vitalii.employeemanager.dto;
 
 import lombok.Getter;
 import lombok.Setter;

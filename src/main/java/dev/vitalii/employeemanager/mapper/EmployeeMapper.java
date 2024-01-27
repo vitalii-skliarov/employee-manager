@@ -1,7 +1,7 @@
-package dev.vitalii.springbootfullstackwithangular.mapper;
+package dev.vitalii.employeemanager.mapper;
 
-import dev.vitalii.springbootfullstackwithangular.dto.EmployeeOutDto;
-import dev.vitalii.springbootfullstackwithangular.model.Employee;
+import dev.vitalii.employeemanager.dto.EmployeeOutDto;
+import dev.vitalii.employeemanager.model.Employee;
 import org.springframework.stereotype.Component;
 
 @Component
